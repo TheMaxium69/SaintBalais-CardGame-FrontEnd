@@ -1,0 +1,28 @@
+#deck{
+
+  .oneShelf{
+    width: 90%;
+    margin-left: auto;
+
+    .shelf{
+      height: 45px;
+      border-top-left-radius: 15px;
+      border-bottom-left-radius: 15px;
+
+
+      background-image: url("/carton.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+  }
+
+
+
+
+
+
+
+
+}
