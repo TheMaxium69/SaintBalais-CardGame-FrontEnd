@@ -1,0 +1,10 @@
+.oneCard{
+  width: 100px;
+  height: 140px;
+
+
+  background-image: url("/card/exemple2.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

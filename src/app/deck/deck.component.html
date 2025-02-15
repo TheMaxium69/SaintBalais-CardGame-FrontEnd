@@ -5,9 +5,12 @@
   <ng-container *ngFor="let i of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]">
 
     <div class="oneShelf">
-
-
-      Étagère {{ i }}
+      <div class="allCards">
+        <app-card></app-card>
+        <app-card></app-card>
+        <app-card *ngIf="pageWidth > 380"></app-card>
+        <app-card *ngIf="pageWidth > 543"></app-card>
+      </div>
       <div class="shelf"></div>
     </div>
 
