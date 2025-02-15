@@ -25,11 +25,15 @@
 
   }
 
+}
 
+@media (min-width: 700px){
+  .oneShelf {
+    width: 100%!important;
 
-
-
-
-
-
+    .shelf {
+      border-bottom-right-radius: 15px;
+      border-top-right-radius: 15px;
+    }
+  }
 }
