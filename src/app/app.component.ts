@@ -2,11 +2,14 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {HttpHeaders} from "@angular/common/http";
 import Swal from "sweetalert2";
+import {DownbarComponent} from "./_global/downbar/downbar.component";
+import {LoginComponent} from "./login/login.component";
+import {NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, DownbarComponent, LoginComponent, NgIf],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -29,8 +32,8 @@ export class AppComponent {
   //%     API - TYROLIUM      %//
 
   // SETTING
-  Debug:Boolean = false; // Active la view Serv and Local
-  isLoggedIn: boolean = false;
+  Debug:Boolean = true; // Active la view Serv and Local
+  isLoggedIn: boolean = true;
   userConnected: /*UserInterface|*/any;
   token: string|any;
   isAccess: boolean = true;
