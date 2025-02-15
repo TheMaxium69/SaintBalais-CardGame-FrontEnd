@@ -95,6 +95,17 @@
 
   #bar {
     margin-left: 5px!important;
+  }
+
+  #user {
+    margin-right: 5px!important;
+  }
+
+}
+
+@media (max-width: 380px) {
+
+  #bar {
     width: 250px!important;
     height: 50px!important;
 
@@ -106,8 +117,6 @@
     }
   }
 
-  #user {
-    margin-right: 5px!important;
-  }
-
 }
+
+

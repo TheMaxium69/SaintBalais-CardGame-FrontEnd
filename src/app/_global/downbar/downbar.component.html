@@ -2,15 +2,15 @@
 
   <div id="downbar-in">
     <div routerLink="/">
-      <i class="ri-home-9-fill"></i>
+      <i [ngClass]="{'ri-home-9-fill': currentRoute === '/', 'ri-home-9-line': currentRoute !== '/'}" class=""></i>
     </div>
 
     <div routerLink="/deck">
-      <i class="ri-sim-card-fill"></i>
+      <i [ngClass]="{'ri-sim-card-fill': currentRoute === '/deck', 'ri-sim-card-line': currentRoute !== '/deck'}"></i>
     </div>
 
     <div routerLink="/setting">
-      <i class="ri-settings-5-fill"></i>
+      <i [ngClass]="{'ri-settings-5-fill': currentRoute === '/setting', 'ri-settings-5-line': currentRoute !== '/setting'}"></i>
     </div>
   </div>
 
