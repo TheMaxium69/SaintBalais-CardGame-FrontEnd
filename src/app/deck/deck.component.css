@@ -26,6 +26,9 @@
 
   }
 
+  .oneShelf:first-child{
+    padding-top: 25px;
+  }
   .oneShelf:last-child{
     padding-bottom: 90px;
   }

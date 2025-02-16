@@ -14,10 +14,13 @@
 
   display: flex;
   align-items: flex-end;
+
+
+  transition: transform 0.3s ease;
 }
 
 .noObtain{
-  filter: brightness(0.8);
+  filter: brightness(0.75);
   transform: scale(0.9);
 }
 
