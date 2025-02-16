@@ -15,6 +15,7 @@ body{
   font-style: normal;
 
   background-image: url("/paper.png");
+  background-attachment: fixed;
 }
 
 
@@ -28,8 +29,8 @@ body{
   margin-right: auto;
 
   /* DEBUG */
-  border-left: 1px solid black;
-  border-right: 1px solid black;
+  /*border-left: 1px solid black;*/
+  /*border-right: 1px solid black;*/
 }
 
 .container.setting{

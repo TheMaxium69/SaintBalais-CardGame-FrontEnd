@@ -38,7 +38,6 @@ export class DeckComponent implements OnInit {
 
   getPageWidth() {
     this.pageWidth = window.innerWidth;
-    this.getNumberShelf();
   }
 
   getCards() {

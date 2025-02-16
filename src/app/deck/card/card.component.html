@@ -1,1 +1,14 @@
-<article class="oneCard"></article>
+@if (card) {
+
+
+  @if (card.isObtained) {
+    <article class="oneCard obtain" [style.background-image]="'url(/' + card.card_front.url + ')'">
+      <label *ngIf="card.nbObtained > 1">{{ card.nbObtained }}</label>
+    </article>
+  }
+
+  @if (!card.isObtained) {
+    <article class="oneCard noObtain" [style.background-image]="'url(/' + card.card_back.url + ')'"></article>
+  }
+
+}

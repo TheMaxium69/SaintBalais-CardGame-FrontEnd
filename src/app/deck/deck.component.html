@@ -2,11 +2,13 @@
 
 <section id="deck" class="container">
 
-  <ng-container *ngFor="let i of [].constructor(getNumberShelf())">
+  <ng-container *ngFor="let i of [].constructor(getNumberShelf()); let indexShelf = index">
 
     <div class="oneShelf">
       <div class="allCards">
-        <app-card *ngFor="let i of [].constructor(getNumberCard())"></app-card>
+        <ng-container *ngFor="let i of [].constructor(getNumberCard()); let indexCards = index">
+          <app-card *ngIf="app.myCardGame[indexCards + (indexShelf * getNumberCard())]" [card]="app.myCardGame[indexCards + (indexShelf * getNumberCard())]"></app-card>
+        </ng-container>
       </div>
       <div class="shelf"></div>
     </div>

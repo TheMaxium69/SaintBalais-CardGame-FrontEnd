@@ -1,5 +1,6 @@
 #deck{
 
+
   .oneShelf{
     width: 95%;
     margin-left: auto;
@@ -23,6 +24,10 @@
       background-size: cover;
     }
 
+  }
+
+  .oneShelf:last-child{
+    padding-bottom: 90px;
   }
 
 }

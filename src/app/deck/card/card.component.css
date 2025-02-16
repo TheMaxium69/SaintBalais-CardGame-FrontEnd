@@ -9,4 +9,34 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
+
+
+  display: flex;
+  align-items: flex-end;
+}
+
+.noObtain{
+  filter: brightness(0.8);
+  transform: scale(0.9);
+}
+
+.noObtain:hover {
+  transform: scale(0.95);
+}
+.obtain:hover{
+  transform: scale(1.05);
+}
+
+label{
+
+  width: 15px;
+  height: 15px;
+  border-radius: 5px;
+  background-color: #d39065;
+  color: black;
+
+  font-size: 10px;
+  text-align: center;
+  /*padding-top: 3px;*/
 }
