@@ -5,6 +5,9 @@ import Swal from "sweetalert2";
 import {DownbarComponent} from "./_global/downbar/downbar.component";
 import {LoginComponent} from "./login/login.component";
 import {NgIf} from "@angular/common";
+import {CardInterface} from "./_interface/card.interface";
+
+import {cards} from "./_mock/card.data";
 
 @Component({
   selector: 'app-root',
@@ -46,7 +49,8 @@ export class AppComponent {
    *
    * ******************************************************************************************************************/
 
-  myCardGame: any[] = [];
+
+  myCardGame: CardInterface[] = cards;
 
 
 
