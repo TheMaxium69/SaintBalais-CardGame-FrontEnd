@@ -23,28 +23,26 @@ import Swal from "sweetalert2";
 export class DeckComponent implements OnInit {
   pageWidth: number = 0;
 
-  constructor(private app:AppComponent,
+  constructor(protected app:AppComponent,
               private cardService:CardService) {}
 
   ngOnInit() {
 
     this.getCards();
 
-    this.getPageWidth(); // Récupérer la largeur initiale de la page
+    this.getPageWidth();
     window.addEventListener('resize', () => {
-      this.getPageWidth(); // Mettre à jour la largeur lorsque la page est redimensionnée
-    });
-
+      this.getPageWidth();
+    })
   }
 
   getPageWidth() {
     this.pageWidth = window.innerWidth;
-    console.log(this.pageWidth);
+    this.getNumberShelf();
   }
 
   getCards() {
 
-    // this.app.myCardGame
     if (this.app.myCardGame.length == 0){
 
       this.cardService.getMyCards(this.app.setURL(), this.app.createCors()).subscribe((response: { message:string, result:CardInterface[] }) => {
@@ -60,10 +58,34 @@ export class DeckComponent implements OnInit {
         }
       }, (error) => this.app.erreurSubcribe() )
 
-
-
     }
 
+  }
+
+  getNumberCard(): number{
+
+    if (this.pageWidth < 380){
+      return 2;
+    } else if (this.pageWidth < 543){
+      return 3;
+    } else if (this.pageWidth < 700){
+      return 4
+    } else {
+      return 5;
+    }
+
+  }
+
+
+  getNumberShelf(){
+
+    // console.log('all card : ', this.app.myCardGame.length);
+    // console.log('nb card : ', this.getNumberCard());
+
+    let nbShelf = this.app.myCardGame.length / this.getNumberCard();
+
+    // console.log(nbShelf);
+    return Math.ceil(nbShelf);
 
   }
 
