@@ -26,7 +26,7 @@ export class AppComponent {
 
   //%     API - SB      %//
   AppEnv: string = "DEV"; // DEV or PROD or PRODMAX
-  urlApiDev: string = "http://127.0.0.1:8000";
+  urlApiDev: string = "https://127.0.0.1:8000";
   urlApiProd: string = "https://------";
   //%     API - SB      %//
 
@@ -38,7 +38,7 @@ export class AppComponent {
   Debug:Boolean = false; // Active la view Serv and Local
   isLoggedIn: boolean = true;
   userConnected: /*UserInterface|*/any;
-  token: string|any;
+  token: string|any ;
   isAccess: boolean = true;
   currentUrl: string = "/";
 
@@ -50,7 +50,8 @@ export class AppComponent {
    * ******************************************************************************************************************/
 
 
-  myCardGame: CardInterface[] = cards;
+  // myCardGame: CardInterface[] = cards;
+  myCardGame: CardInterface[] = [];
 
 
 
@@ -133,6 +134,7 @@ export class AppComponent {
       }
 
       const options: {headers: HttpHeaders}  = { headers: headers };
+      console.log(options);
       return options;
     }
 

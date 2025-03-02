@@ -11,7 +11,7 @@ export class CardService {
   constructor(private http: HttpClient) {}
 
   getMyCards(url: string, option: {headers: HttpHeaders}): Observable<ApiCallInterface> {
-    return this.http.get<ApiCallInterface>(url+"/cards", option);
+    return this.http.get<ApiCallInterface>(url+"/allCardByUser", option);
   }
 
 }
