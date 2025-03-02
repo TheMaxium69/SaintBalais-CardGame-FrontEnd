@@ -2,13 +2,13 @@
 
 
   @if (card.isObtained) {
-    <article class="oneCard obtain" [style.background-image]="'url(/' + card.card_front.url + ')'" (click)="zoomCard(card)">
+    <article class="oneCard obtain" [style.background-image]="'url(/' + card.cardFront.url + ')'" (click)="zoomCard(card)">
       <label *ngIf="card.nbObtained > 1">{{ card.nbObtained }}</label>
     </article>
   }
 
   @if (!card.isObtained) {
-    <article class="oneCard noObtain" [style.background-image]="'url(/' + card.card_back.url + ')'"></article>
+    <article class="oneCard noObtain" [style.background-image]="'url(/' + card.cardBack.url + ')'"></article>
   }
 
 }

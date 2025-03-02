@@ -5,8 +5,8 @@ export interface CardInterface {
   id: number;
   name: string;
   description: string;
-  card_front: PictureInterface;
-  card_back: PictureInterface;
+  cardFront: PictureInterface;
+  cardBack: PictureInterface;
   isObtained: boolean;
   nbObtained: number;
 

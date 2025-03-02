@@ -45,7 +45,7 @@ export class CardComponent implements OnInit{
     // Set up zoomed card styles
     zoomedCard.style.width = '80vw';
     zoomedCard.style.height = '80vh';
-    zoomedCard.style.backgroundImage = `url(/${card.card_front.url})`;
+    zoomedCard.style.backgroundImage = `url(/${card.cardFront.url})`;
     zoomedCard.style.backgroundSize = 'contain';
     zoomedCard.style.backgroundPosition = 'center';
     zoomedCard.style.backgroundRepeat = 'no-repeat';
