@@ -6,9 +6,10 @@ import {DownbarComponent} from "./_global/downbar/downbar.component";
 import {LoginComponent} from "./login/login.component";
 import {NgIf} from "@angular/common";
 import {CardInterface} from "./_interface/card.interface";
+import {PanelComponent} from "./_global/panel/panel.component";
 
 import {cards} from "./_mock/card.data";
-import {PanelComponent} from "./_global/panel/panel.component";
+import {tokenExemple} from "./_mock/token.data";
 
 @Component({
   selector: 'app-root',
@@ -39,7 +40,7 @@ export class AppComponent {
   Debug:Boolean = false; // Active la view Serv and Local
   isLoggedIn: boolean = true;
   userConnected: /*UserInterface|*/any;
-  token: string|any;
+  token: string|any = tokenExemple;
   currentUrl: string = "/";
 
 
@@ -52,7 +53,8 @@ export class AppComponent {
 
   // myCardGame: CardInterface[] = cards;
   myCardGame: CardInterface[] = [];
-
+  nbCardOpain:number = 0;
+  timeForOpainBooster:string = '';
 
 
 
@@ -134,7 +136,7 @@ export class AppComponent {
       }
 
       const options: {headers: HttpHeaders}  = { headers: headers };
-      console.log(options);
+      // console.log(options);
       return options;
     }
 

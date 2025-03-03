@@ -25,6 +25,7 @@ export class PanelComponent implements OnInit {
 
     /* Recuperation des informations */
     this.getCards();
+    this.getNavbars();
   }
 
   getCards() {
@@ -34,7 +35,16 @@ export class PanelComponent implements OnInit {
       this.cardService.getMyCards(this.app.setURL(), this.app.createCors()).subscribe((response: { message:string, result:CardInterface[] }) => {
 
         if (response.message == "good") {
-          this.app.myCardGame = response.result;
+          /* TRIE DE CARTE */
+          this.app.myCardGame = response.result.sort((a, b) => {
+            if (a.version !== b.version) {
+              return a.version - b.version; // Trier par version en premier
+            } else if (a.type !== b.type) {
+              return a.type - b.type; // Si les versions sont égales, trier par type
+            } else {
+              return a.rarity - b.rarity; // Si les versions et les types sont égaux, trier par rareté
+            }
+          });
         } else {
           Swal.fire({
             icon: 'error',
@@ -48,4 +58,18 @@ export class PanelComponent implements OnInit {
 
   }
 
+  getNavbars() {
+    this.cardService.getNavbar(this.app.setURL(), this.app.createCors()).subscribe((response: { message:string, result: { time:string, nbCard:number } }) => {
+      if (response.message == "good"){
+        this.app.nbCardOpain = response.result.nbCard;
+        this.app.timeForOpainBooster = response.result.time
+      } else {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Une erreur est survenue',
+        })
+      }
+    }, (error) => this.app.erreurSubcribe() )
+  }
 }

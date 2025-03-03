@@ -14,4 +14,7 @@ export class CardService {
     return this.http.get<ApiCallInterface>(url+"/allCardByUser", option);
   }
 
+  getNavbar(url: string, option: { headers: HttpHeaders }):Observable<ApiCallInterface> {
+    return this.http.get<ApiCallInterface>(url+"/getNavbar", option);
+  }
 }
