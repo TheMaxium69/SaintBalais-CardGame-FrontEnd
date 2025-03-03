@@ -8,11 +8,12 @@ import {NgIf} from "@angular/common";
 import {CardInterface} from "./_interface/card.interface";
 
 import {cards} from "./_mock/card.data";
+import {PanelComponent} from "./_global/panel/panel.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, DownbarComponent, LoginComponent, NgIf],
+  imports: [RouterOutlet, DownbarComponent, LoginComponent, NgIf, PanelComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -38,12 +39,11 @@ export class AppComponent {
   Debug:Boolean = false; // Active la view Serv and Local
   isLoggedIn: boolean = true;
   userConnected: /*UserInterface|*/any;
-  token: string|any ;
-  isAccess: boolean = true;
+  token: string|any;
   currentUrl: string = "/";
 
 
-  /******************************************************************************************************************
+  /*****************************************************************************************************************
    *
    * CACHE
    *

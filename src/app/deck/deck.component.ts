@@ -23,13 +23,9 @@ import Swal from "sweetalert2";
 export class DeckComponent implements OnInit {
   pageWidth: number = 0;
 
-  constructor(protected app:AppComponent,
-              private cardService:CardService) {}
+  constructor(protected app:AppComponent) {}
 
   ngOnInit() {
-
-    this.getCards();
-
     this.getPageWidth();
     window.addEventListener('resize', () => {
       this.getPageWidth();
@@ -38,27 +34,6 @@ export class DeckComponent implements OnInit {
 
   getPageWidth() {
     this.pageWidth = window.innerWidth;
-  }
-
-  getCards() {
-
-    if (this.app.myCardGame.length == 0){
-
-      this.cardService.getMyCards(this.app.setURL(), this.app.createCors()).subscribe((response: { message:string, result:CardInterface[] }) => {
-
-        if (response.message == "good") {
-          this.app.myCardGame = response.result;
-        } else {
-          Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Une erreur est survenue',
-          })
-        }
-      }, (error) => this.app.erreurSubcribe() )
-
-    }
-
   }
 
   getNumberCard(): number{
