@@ -54,7 +54,8 @@ export class AppComponent {
   // myCardGame: CardInterface[] = cards;
   myCardGame: CardInterface[] = [];
   nbCardOpain:number = 0;
-  timeForOpainBooster:string = '';
+  timeForOpainBooster:number = 0;
+  countdown: string = '12:00';
 
 
 

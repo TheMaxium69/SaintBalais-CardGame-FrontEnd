@@ -18,7 +18,7 @@ export class CardComponent implements OnInit{
 
 
   ngOnInit() {
-    console.log(this.card);
+    // console.log(this.card);
   }
 
   zoomCard(card: CardInterface): void {

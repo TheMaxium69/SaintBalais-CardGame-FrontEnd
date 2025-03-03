@@ -59,10 +59,11 @@ export class PanelComponent implements OnInit {
   }
 
   getNavbars() {
-    this.cardService.getNavbar(this.app.setURL(), this.app.createCors()).subscribe((response: { message:string, result: { time:string, nbCard:number } }) => {
+    this.cardService.getNavbar(this.app.setURL(), this.app.createCors()).subscribe((response: { message:string, result: { time:number, nbCard:number } }) => {
       if (response.message == "good"){
         this.app.nbCardOpain = response.result.nbCard;
-        this.app.timeForOpainBooster = response.result.time
+        this.app.timeForOpainBooster = response.result.time;
+        this.startCountdown(this.app.timeForOpainBooster);
       } else {
         Swal.fire({
           icon: 'error',
@@ -72,4 +73,24 @@ export class PanelComponent implements OnInit {
       }
     }, (error) => this.app.erreurSubcribe() )
   }
+
+
+  startCountdown(seconds: number): void {
+    let timeLeft = seconds;
+
+    const interval = setInterval(() => {
+      if (timeLeft <= 0) {
+        clearInterval(interval);
+        this.app.countdown = '00:00';
+        return;
+      }
+
+      const minutes = Math.floor(timeLeft / 60).toString().padStart(2, '0');
+      const secs = (timeLeft % 60).toString().padStart(2, '0');
+      this.app.countdown = `${minutes}:${secs}`;
+      timeLeft--;
+    }, 1000);
+  }
+
+
 }
