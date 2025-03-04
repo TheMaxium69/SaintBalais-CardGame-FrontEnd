@@ -10,6 +10,9 @@ import {PanelComponent} from "./_global/panel/panel.component";
 
 import {cards} from "./_mock/card.data";
 import {tokenExemple} from "./_mock/token.data";
+import {ApiCallInterface} from "./_interface/api-call.interface";
+import {AuthService} from "./_service/auth.service";
+import {UserInterface} from "./_interface/user.interface";
 
 @Component({
   selector: 'app-root',
@@ -19,6 +22,32 @@ import {tokenExemple} from "./_mock/token.data";
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+
+  constructor(
+    private authService: AuthService,
+  ) {
+    // const cookieToken:string = this.cookieService.get('tokenSaintBalais');
+    // const cookieUser:string = this.cookieService.get('userSaintBalais');
+    //
+    // if (cookieToken && cookieUser){
+    //   this.loginWithCookie(cookieToken, cookieUser);
+    // } else {
+    //   // this.router.navigate(['/account']);
+    // }
+
+    /* Récupérer le token depuis le localStorage */
+    const savedToken = localStorage.getItem('tokenSaintBalais');
+    const savedUser = localStorage.getItem('userSaintBalais');
+    if (savedToken) {
+      this.token = savedToken;
+      this.isLoggedIn = true;
+      this.loginWithToken(savedToken);
+
+      if (savedUser){
+        this.userConnected = JSON.parse(savedUser);
+      }
+    }
+  }
 
   /******************************************************************************************************************
    *
@@ -38,9 +67,9 @@ export class AppComponent {
 
   // SETTING
   Debug:Boolean = false; // Active la view Serv and Local
-  isLoggedIn: boolean = true;
-  userConnected: /*UserInterface|*/any;
-  token: string|any = tokenExemple;
+  isLoggedIn: boolean = false;
+  userConnected: UserInterface|null = null;
+  token: string|null = null;
   currentUrl: string = "/";
 
 
@@ -69,31 +98,122 @@ export class AppComponent {
    * ******************************************************************************************************************/
 
 
+  loginWithID(email:string, password:string): void {
+    /* Connection avec l'email et le mdp */
+
+    let bodyNoJson:any;
+    bodyNoJson = {
+      "email_auth":email,
+      "mdp_auth":password
+    };
+
+    this.authService.postLoginUser(bodyNoJson, this.setURL()).subscribe((msgToken:ApiCallInterface) => {
+
+      if (msgToken?.message == "Connected"){
+
+        this.loginWithToken(msgToken.token);
+
+      } else {
+
+        if (msgToken?.message == "bad email"){
+          Swal.fire({
+            title: 'Erreur!',
+            text: 'Aucun compte n\'est associé à cet email',
+            icon: 'error',
+            confirmButtonText: 'OK',
+          })
+        } else if (msgToken?.message == "bad passwd") {
+          Swal.fire({
+            title: 'Erreur!',
+            text: 'Mot de passe incorrect',
+            icon: 'error',
+            confirmButtonText: 'OK',
+          })
+        } else {
+          Swal.fire({
+            title: 'Erreur!',
+            text: 'Erreur lors de la connexion',
+            icon: 'error',
+            confirmButtonText: 'OK',
+          })
+        }
+
+      }
+
+    }, (error) => {
+      this.erreurSubcribe()
+    });
+
+
+  }
+
+  loginWithToken(token:string): void {
+    /* Connection avec le token */
+
+    this.authService.postLoginToken(token, this.setURL()).subscribe((msgUser:ApiCallInterface) => {
+
+      if (msgUser.message == "Connected"){
+
+        this.login(msgUser.result, token);
+
+      } else if (msgUser.message == "user ban") {
+
+        this.loggout()
+
+        Swal.fire({
+          title: 'Ban!',
+          text: 'Votre compte à été bannie',
+          icon: 'error',
+          confirmButtonText: 'OK'
+        })
+
+
+      } else {
+
+        this.loggout();
+        this.erreurSubcribe();
+
+      }
+
+    }, (error) => {
+
+      this.loggout()
+      this.erreurSubcribe();
+    });
+  }
+
+  login(user:any, token:string): void {
+    /* Action a faire une fois connecter */
+
+    this.token = token;
+    this.userConnected = user;
+    this.isLoggedIn = true;
+
+    /* Stocker dans le localstorage */
+    localStorage.setItem('tokenSaintBalais', token);
+    localStorage.setItem('userSaintBalais', JSON.stringify(user));
+
+  }
+
   loggout(): void {
 
+    /* Supprimer le token du localStorage */
+    localStorage.removeItem('tokenSaintBalais');
+    localStorage.removeItem('userSaintBalais');
+
+    /* Vidé les variable */
     this.isLoggedIn = false;
-    this.token = undefined;
-    this.userConnected = undefined;
+    this.token = null;
+    this.userConnected = null;
 
 
     /* Vider le cache */
     this.myCardGame = [];
+    this.nbCardOpain = 0;
+    this.timeForOpainBooster = 0;
+    this.countdown = '12:00';
 
   }
-
-
-  loginWithID(): void {
-    /* Connection avec l'email et le mdp */
-  }
-
-  loginWithCache(): void {
-    /* Connection avec le cache */
-  }
-
-  login(): void {
-    /* Connection une fois le token recuperer */
-  }
-
 
 
   /*****************************************************************************************************************
