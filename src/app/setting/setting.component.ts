@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {AppComponent} from "../app.component";
 
 @Component({
   selector: 'app-setting',
@@ -8,5 +9,7 @@ import { Component } from '@angular/core';
   styleUrl: './setting.component.css'
 })
 export class SettingComponent {
+
+  constructor(protected app:AppComponent) {}
 
 }

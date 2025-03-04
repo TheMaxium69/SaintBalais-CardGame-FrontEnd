@@ -3,7 +3,7 @@
   <div id="navbar-in">
 
     <div id="bar">
-      <img src="/logo.png" alt="logo">
+      <img src="logo.png" alt="logo">
       <div class="text">
         <i class="ri-sim-card-line"></i>
         <p>{{ app.nbCardOpain }}</p>
@@ -16,7 +16,7 @@
     </div>
 
     <div id="user" routerLink="/setting">
-      <img src="https://avatars.githubusercontent.com/u/63310746?v=4" alt="user pp">
+      <img [src]="app.generatePPUseritium(app.userConnected?.username, app.userConnected?.pp)" alt="user pp">
     </div>
 
   </div>

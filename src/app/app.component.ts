@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {Router, RouterOutlet} from '@angular/router';
 import {HttpHeaders} from "@angular/common/http";
 import Swal from "sweetalert2";
 import {DownbarComponent} from "./_global/downbar/downbar.component";
@@ -24,17 +24,9 @@ import {UserInterface} from "./_interface/user.interface";
 export class AppComponent {
 
   constructor(
+    private router: Router,
     private authService: AuthService,
   ) {
-    // const cookieToken:string = this.cookieService.get('tokenSaintBalais');
-    // const cookieUser:string = this.cookieService.get('userSaintBalais');
-    //
-    // if (cookieToken && cookieUser){
-    //   this.loginWithCookie(cookieToken, cookieUser);
-    // } else {
-    //   // this.router.navigate(['/account']);
-    // }
-
     /* Récupérer le token depuis le localStorage */
     const savedToken = localStorage.getItem('tokenSaintBalais');
     const savedUser = localStorage.getItem('userSaintBalais');
@@ -55,41 +47,36 @@ export class AppComponent {
    *
    * ******************************************************************************************************************/
 
+  // SETTING
+  AppEnv: string = "DEV"; // DEV or PROD
+  Debug:Boolean = false; // Active la view Serv and Local
+
   //%     API - SB      %//
-  AppEnv: string = "DEV"; // DEV or PROD or PRODMAX
   urlApiDev: string = "https://127.0.0.1:8000";
   urlApiProd: string = "https://------";
   //%     API - SB      %//
 
   //%     API - TYROLIUM      %//
   urlGeneratePP:string = "https://tyrolium.fr/generate-pp/"
+  urlUploadPP:string = "https://useritium.fr/uploads/pp/"
   //%     API - TYROLIUM      %//
-
-  // SETTING
-  Debug:Boolean = false; // Active la view Serv and Local
-  isLoggedIn: boolean = false;
-  userConnected: UserInterface|null = null;
-  token: string|null = null;
-  currentUrl: string = "/";
-
-
+  
   /*****************************************************************************************************************
    *
    * CACHE
    *
    * ******************************************************************************************************************/
 
+  // User
+  isLoggedIn: boolean = false;
+  userConnected: UserInterface|null = null;
+  token: string|null = null;
 
-  // myCardGame: CardInterface[] = cards;
+  // Card
   myCardGame: CardInterface[] = [];
   nbCardOpain:number = 0;
   timeForOpainBooster:number = 0;
   countdown: string = '12:00';
-
-
-
-
-
 
   /******************************************************************************************************************
    *
@@ -189,6 +176,8 @@ export class AppComponent {
     this.userConnected = user;
     this.isLoggedIn = true;
 
+    console.log(this.userConnected);
+
     /* Stocker dans le localstorage */
     localStorage.setItem('tokenSaintBalais', token);
     localStorage.setItem('userSaintBalais', JSON.stringify(user));
@@ -213,6 +202,7 @@ export class AppComponent {
     this.timeForOpainBooster = 0;
     this.countdown = '12:00';
 
+    this.router.navigate(['/']);
   }
 
 
@@ -275,27 +265,17 @@ export class AppComponent {
   }
 
 
-  generatePPUseritium(pp:string|undefined|null, username:string|undefined, colorSelected:string|undefined):string {
+  generatePPUseritium(username:string|undefined, pp:string|undefined):string {
 
     let result:string = this.urlGeneratePP;
 
     if (pp){
-      result = pp
+      result = this.urlUploadPP + pp
     } else if (username) {
-
-      let color
-      if (colorSelected){
-        if (Array.isArray(colorSelected)) {
-          color = colorSelected[0];
-        } else {
-          color = colorSelected;
-        }
-      }
-      result = this.urlGeneratePP + '?l=' + username[0] + '&c='+ color.substring(1);
-
+      result = this.urlGeneratePP + '?l=' + username[0] + '&c=c59662';
     }
 
-    return 'background-image: url(' + result + ')';
+    return result;
 
   }
 

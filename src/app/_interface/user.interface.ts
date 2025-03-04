@@ -8,5 +8,5 @@ export interface UserInterface {
   displaynameUseritium:string,
   joinAt:Date,
   userRole:string[]
-  pp: PictureInterface|undefined,
+  pp: string|undefined,
 }
