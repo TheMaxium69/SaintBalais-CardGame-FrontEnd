@@ -85,9 +85,9 @@ export class PanelComponent implements OnInit {
         return;
       }
 
-      const minutes = Math.floor(timeLeft / 60).toString().padStart(2, '0');
-      const secs = (timeLeft % 60).toString().padStart(2, '0');
-      this.app.countdown = `${minutes}:${secs}`;
+      const hours = Math.floor(timeLeft / 3600).toString().padStart(2, '0');
+      const minutes = Math.floor((timeLeft % 3600) / 60).toString().padStart(2, '0');
+      this.app.countdown = `${hours}:${minutes}`;
       timeLeft--;
     }, 1000);
   }
