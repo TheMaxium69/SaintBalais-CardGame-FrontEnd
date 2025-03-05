@@ -176,8 +176,6 @@ export class AppComponent {
     this.userConnected = user;
     this.isLoggedIn = true;
 
-    console.log(this.userConnected);
-
     /* Stocker dans le localstorage */
     localStorage.setItem('tokenSaintBalais', token);
     localStorage.setItem('userSaintBalais', JSON.stringify(user));

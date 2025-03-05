@@ -1,0 +1,20 @@
+
+.booster-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.booster {
+  height: 80%;
+  width: auto;
+}
+
+h1{
+  text-align: center;
+  margin-top: unset;
+  margin-bottom: 20px;
+}

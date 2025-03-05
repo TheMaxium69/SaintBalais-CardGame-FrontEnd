@@ -17,4 +17,9 @@ export class CardService {
   getNavbar(url: string, option: { headers: HttpHeaders }):Observable<ApiCallInterface> {
     return this.http.get<ApiCallInterface>(url+"/getNavbar", option);
   }
+
+  openBooster(url: string, option: { headers: HttpHeaders }):Observable<ApiCallInterface> {
+    return this.http.get<ApiCallInterface>(url+"/openBooster", option);
+  }
+
 }
