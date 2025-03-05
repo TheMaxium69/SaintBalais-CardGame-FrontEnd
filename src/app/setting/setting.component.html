@@ -1,7 +1,58 @@
 <section id="setting" class="container setting">
 
-  <h1>Setting</h1>
 
-  <button (click)="app.loggout()">Logout</button>
+  <div id="user">
+    <img [src]="app.generatePPUseritium(app.userConnected?.username, app.userConnected?.pp)" alt="user pp">
+  </div>
+
+  <div class="back-setting">
+    <h1>{{ app.userConnected?.displaynameUseritium || app.userConnected?.username }}</h1>
+    <button (click)="app.loggout()">Logout</button>
+  </div>
 
 </section>
+
+<style>
+  #setting {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh!important;
+    padding-bottom: unset!important;
+
+    #user{
+      margin-top: 8vh;
+      margin-bottom: -8vh;
+      img{
+        width: auto;
+        height: 250px;
+        border-radius: 100%;
+      }
+    }
+
+    .back-setting{
+
+      h1{
+        text-align: center;
+        margin: 20px;
+      }
+
+      height: 100%;
+      width: 100%;
+      border-top-left-radius: 30px;
+      border-top-right-radius: 30px;
+      background-image: url(/carton.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+
+
+    }
+
+
+
+  }
+
+</style>
