@@ -39,7 +39,18 @@ export class BoosterComponent {
 
           })
 
-
+          this.cardService.getNavbar(this.app.setURL(), this.app.createCors()).subscribe((response: { message:string, result: { time:number, nbCard:number } }) => {
+            if (response.message == "good"){
+              this.app.nbCardOpain = response.result.nbCard;
+              this.app.timeForOpainBooster = response.result.time;
+            } else {
+              Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Une erreur est survenue',
+              })
+            }
+          }, (error) => this.app.erreurSubcribe() )
 
 
 
