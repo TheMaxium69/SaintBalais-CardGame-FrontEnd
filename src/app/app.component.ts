@@ -60,7 +60,7 @@ export class AppComponent {
   urlGeneratePP:string = "https://tyrolium.fr/generate-pp/"
   urlUploadPP:string = "https://useritium.fr/uploads/pp/"
   //%     API - TYROLIUM      %//
-  
+
   /*****************************************************************************************************************
    *
    * CACHE
