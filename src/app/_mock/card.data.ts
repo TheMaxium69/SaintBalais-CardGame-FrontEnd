@@ -11,7 +11,9 @@ export const cards: CardInterface[] = [
     version: 1,
     type: 0,
     cardBack: {id: 1, url: 'card/card-off.png'},
-    cardFront: {id: 2, url: 'card/exemple1.png'}
+    cardFront: {id: 2, url: 'card/exemple1.png'},
+    card_front: undefined,
+    card_back: undefined
   },
   {
     id: 2,
@@ -23,7 +25,9 @@ export const cards: CardInterface[] = [
     version: 1,
     type: 0,
     cardBack: {id: 1, url: 'card/card-off.png'},
-    cardFront: {id: 3, url: 'card/exemple2.png'}
+    cardFront: {id: 3, url: 'card/exemple2.png'},
+    card_front: undefined,
+    card_back: undefined
   },
   {
     id: 3,
@@ -35,7 +39,9 @@ export const cards: CardInterface[] = [
     version: 1,
     type: 0,
     cardBack: {id: 1, url: 'card/card-off.png'},
-    cardFront: {id: 3, url: 'card/exemple2.png'}
+    cardFront: {id: 3, url: 'card/exemple2.png'},
+    card_front: undefined,
+    card_back: undefined
   },
   {
     id: 4,
@@ -47,7 +53,9 @@ export const cards: CardInterface[] = [
     version: 1,
     type: 0,
     cardBack: {id: 1, url: 'card/card-off.png'},
-    cardFront: {id: 3, url: 'card/exemple2.png'}
+    cardFront: {id: 3, url: 'card/exemple2.png'},
+    card_front: undefined,
+    card_back: undefined
   },
   {
     id: 5,
@@ -59,7 +67,9 @@ export const cards: CardInterface[] = [
     version: 1,
     type: 0,
     cardBack: {id: 1, url: 'card/card-off.png'},
-    cardFront: {id: 3, url: 'card/exemple2.png'}
+    cardFront: {id: 3, url: 'card/exemple2.png'},
+    card_front: undefined,
+    card_back: undefined
   },
   {
     id: 6,
@@ -71,7 +81,9 @@ export const cards: CardInterface[] = [
     version: 1,
     type: 0,
     cardBack: {id: 1, url: 'card/card-off.png'},
-    cardFront: {id: 3, url: 'card/exemple2.png'}
+    cardFront: {id: 3, url: 'card/exemple2.png'},
+    card_front: undefined,
+    card_back: undefined
   },
   {
     id: 7,
@@ -83,7 +95,9 @@ export const cards: CardInterface[] = [
     version: 1,
     type: 0,
     cardBack: {id: 1, url: 'card/card-off.png'},
-    cardFront: {id: 3, url: 'card/exemple2.png'}
+    cardFront: {id: 3, url: 'card/exemple2.png'},
+    card_front: undefined,
+    card_back: undefined
   },
   {
     id: 8,
@@ -95,7 +109,9 @@ export const cards: CardInterface[] = [
     version: 1,
     type: 0,
     cardBack: {id: 1, url: 'card/card-off.png'},
-    cardFront: {id: 3, url: 'card/exemple2.png'}
+    cardFront: {id: 3, url: 'card/exemple2.png'},
+    card_front: undefined,
+    card_back: undefined
   },
   {
     id: 9,
@@ -107,7 +123,9 @@ export const cards: CardInterface[] = [
     version: 1,
     type: 0,
     cardBack: {id: 1, url: 'card/card-off.png'},
-    cardFront: {id: 3, url: 'card/exemple2.png'}
+    cardFront: {id: 3, url: 'card/exemple2.png'},
+    card_front: undefined,
+    card_back: undefined
   },
   {
     id: 10,
@@ -119,7 +137,9 @@ export const cards: CardInterface[] = [
     version: 1,
     type: 0,
     cardBack: {id: 1, url: 'card/card-off.png'},
-    cardFront: {id: 3, url: 'card/exemple2.png'}
+    cardFront: {id: 3, url: 'card/exemple2.png'},
+    card_front: undefined,
+    card_back: undefined
   },
   {
     id: 11,
@@ -131,7 +151,9 @@ export const cards: CardInterface[] = [
     version: 1,
     type: 0,
     cardBack: {id: 1, url: 'card/card-off.png'},
-    cardFront: {id: 3, url: 'card/exemple2.png'}
+    cardFront: {id: 3, url: 'card/exemple2.png'},
+    card_front: undefined,
+    card_back: undefined
   },
   {
     id: 12,
@@ -143,7 +165,9 @@ export const cards: CardInterface[] = [
     version: 1,
     type: 0,
     cardBack: {id: 1, url: 'card/card-off.png'},
-    cardFront: {id: 3, url: 'card/exemple2.png'}
+    cardFront: {id: 3, url: 'card/exemple2.png'},
+    card_front: undefined,
+    card_back: undefined
   },
   {
     id: 13,
@@ -155,7 +179,9 @@ export const cards: CardInterface[] = [
     version: 1,
     type: 0,
     cardBack: {id: 1, url: 'card/card-off.png'},
-    cardFront: {id: 3, url: 'card/exemple2.png'}
+    cardFront: {id: 3, url: 'card/exemple2.png'},
+    card_front: undefined,
+    card_back: undefined
   },
   {
     id: 14,
@@ -167,7 +193,9 @@ export const cards: CardInterface[] = [
     version: 1,
     type: 0,
     cardBack: {id: 1, url: 'card/card-off.png'},
-    cardFront: {id: 3, url: 'card/exemple2.png'}
+    cardFront: {id: 3, url: 'card/exemple2.png'},
+    card_front: undefined,
+    card_back: undefined
   },
   {
     id: 15,
@@ -179,7 +207,9 @@ export const cards: CardInterface[] = [
     version: 1,
     type: 0,
     cardBack: {id: 1, url: 'card/card-off.png'},
-    cardFront: {id: 3, url: 'card/exemple2.png'}
+    cardFront: {id: 3, url: 'card/exemple2.png'},
+    card_front: undefined,
+    card_back: undefined
   },
   {
     id: 16,
@@ -191,7 +221,9 @@ export const cards: CardInterface[] = [
     version: 1,
     type: 0,
     cardBack: {id: 1, url: 'card/card-off.png'},
-    cardFront: {id: 3, url: 'card/exemple2.png'}
+    cardFront: {id: 3, url: 'card/exemple2.png'},
+    card_front: undefined,
+    card_back: undefined
   },
   {
     id: 17,
@@ -203,7 +235,9 @@ export const cards: CardInterface[] = [
     version: 1,
     type: 0,
     cardBack: {id: 1, url: 'card/card-off.png'},
-    cardFront: {id: 3, url: 'card/exemple2.png'}
+    cardFront: {id: 3, url: 'card/exemple2.png'},
+    card_front: undefined,
+    card_back: undefined
   },
   {
     id: 18,
@@ -215,7 +249,9 @@ export const cards: CardInterface[] = [
     version: 1,
     type: 0,
     cardBack: {id: 1, url: 'card/card-off.png'},
-    cardFront: {id: 3, url: 'card/exemple2.png'}
+    cardFront: {id: 3, url: 'card/exemple2.png'},
+    card_front: undefined,
+    card_back: undefined
   },
   {
     id: 3,
@@ -227,7 +263,9 @@ export const cards: CardInterface[] = [
     version: 1,
     type: 0,
     cardBack: {id: 1, url: 'card/card-off.png'},
-    cardFront: {id: 3, url: 'card/exemple2.png'}
+    cardFront: {id: 3, url: 'card/exemple2.png'},
+    card_front: undefined,
+    card_back: undefined
   },
   {
     id: 4,
@@ -239,7 +277,9 @@ export const cards: CardInterface[] = [
     version: 1,
     type: 0,
     cardBack: {id: 1, url: 'card/card-off.png'},
-    cardFront: {id: 3, url: 'card/exemple2.png'}
+    cardFront: {id: 3, url: 'card/exemple2.png'},
+    card_front: undefined,
+    card_back: undefined
   },
   {
     id: 5,
@@ -251,7 +291,9 @@ export const cards: CardInterface[] = [
     version: 1,
     type: 0,
     cardBack: {id: 1, url: 'card/card-off.png'},
-    cardFront: {id: 3, url: 'card/exemple2.png'}
+    cardFront: {id: 3, url: 'card/exemple2.png'},
+    card_front: undefined,
+    card_back: undefined
   },
   {
     id: 6,
@@ -263,7 +305,9 @@ export const cards: CardInterface[] = [
     version: 1,
     type: 0,
     cardBack: {id: 1, url: 'card/card-off.png'},
-    cardFront: {id: 3, url: 'card/exemple2.png'}
+    cardFront: {id: 3, url: 'card/exemple2.png'},
+    card_front: undefined,
+    card_back: undefined
   },
   {
     id: 7,
@@ -275,7 +319,9 @@ export const cards: CardInterface[] = [
     version: 1,
     type: 0,
     cardBack: {id: 1, url: 'card/card-off.png'},
-    cardFront: {id: 3, url: 'card/exemple2.png'}
+    cardFront: {id: 3, url: 'card/exemple2.png'},
+    card_front: undefined,
+    card_back: undefined
   },
   {
     id: 8,
@@ -287,7 +333,9 @@ export const cards: CardInterface[] = [
     version: 1,
     type: 0,
     cardBack: {id: 1, url: 'card/card-off.png'},
-    cardFront: {id: 3, url: 'card/exemple2.png'}
+    cardFront: {id: 3, url: 'card/exemple2.png'},
+    card_front: undefined,
+    card_back: undefined
   },
   {
     id: 9,
@@ -299,7 +347,9 @@ export const cards: CardInterface[] = [
     version: 1,
     type: 0,
     cardBack: {id: 1, url: 'card/card-off.png'},
-    cardFront: {id: 3, url: 'card/exemple2.png'}
+    cardFront: {id: 3, url: 'card/exemple2.png'},
+    card_front: undefined,
+    card_back: undefined
   },
   {
     id: 10,
@@ -311,7 +361,9 @@ export const cards: CardInterface[] = [
     version: 1,
     type: 0,
     cardBack: {id: 1, url: 'card/card-off.png'},
-    cardFront: {id: 3, url: 'card/exemple2.png'}
+    cardFront: {id: 3, url: 'card/exemple2.png'},
+    card_front: undefined,
+    card_back: undefined
   },
   {
     id: 11,
@@ -323,7 +375,9 @@ export const cards: CardInterface[] = [
     version: 1,
     type: 0,
     cardBack: {id: 1, url: 'card/card-off.png'},
-    cardFront: {id: 3, url: 'card/exemple2.png'}
+    cardFront: {id: 3, url: 'card/exemple2.png'},
+    card_front: undefined,
+    card_back: undefined
   },
   {
     id: 12,
@@ -335,7 +389,9 @@ export const cards: CardInterface[] = [
     version: 1,
     type: 0,
     cardBack: {id: 1, url: 'card/card-off.png'},
-    cardFront: {id: 3, url: 'card/exemple2.png'}
+    cardFront: {id: 3, url: 'card/exemple2.png'},
+    card_front: undefined,
+    card_back: undefined
   },
   {
     id: 13,
@@ -347,7 +403,9 @@ export const cards: CardInterface[] = [
     version: 1,
     type: 0,
     cardBack: {id: 1, url: 'card/card-off.png'},
-    cardFront: {id: 3, url: 'card/exemple2.png'}
+    cardFront: {id: 3, url: 'card/exemple2.png'},
+    card_front: undefined,
+    card_back: undefined
   },
   {
     id: 14,
@@ -359,7 +417,9 @@ export const cards: CardInterface[] = [
     version: 1,
     type: 0,
     cardBack: {id: 1, url: 'card/card-off.png'},
-    cardFront: {id: 3, url: 'card/exemple2.png'}
+    cardFront: {id: 3, url: 'card/exemple2.png'},
+    card_front: undefined,
+    card_back: undefined
   },
   {
     id: 15,
@@ -371,7 +431,9 @@ export const cards: CardInterface[] = [
     version: 1,
     type: 0,
     cardBack: {id: 1, url: 'card/card-off.png'},
-    cardFront: {id: 3, url: 'card/exemple2.png'}
+    cardFront: {id: 3, url: 'card/exemple2.png'},
+    card_front: undefined,
+    card_back: undefined
   },
   {
     id: 16,
@@ -383,7 +445,9 @@ export const cards: CardInterface[] = [
     version: 1,
     type: 0,
     cardBack: {id: 1, url: 'card/card-off.png'},
-    cardFront: {id: 3, url: 'card/exemple2.png'}
+    cardFront: {id: 3, url: 'card/exemple2.png'},
+    card_front: undefined,
+    card_back: undefined
   },
   {
     id: 17,
@@ -395,7 +459,9 @@ export const cards: CardInterface[] = [
     version: 1,
     type: 0,
     cardBack: {id: 1, url: 'card/card-off.png'},
-    cardFront: {id: 3, url: 'card/exemple2.png'}
+    cardFront: {id: 3, url: 'card/exemple2.png'},
+    card_front: undefined,
+    card_back: undefined
   },
   {
     id: 18,
@@ -407,7 +473,9 @@ export const cards: CardInterface[] = [
     version: 1,
     type: 0,
     cardBack: {id: 1, url: 'card/card-off.png'},
-    cardFront: {id: 3, url: 'card/exemple2.png'}
+    cardFront: {id: 3, url: 'card/exemple2.png'},
+    card_front: undefined,
+    card_back: undefined
   },
   {
     id: 18,
@@ -419,7 +487,9 @@ export const cards: CardInterface[] = [
     version: 1,
     type: 0,
     cardBack: {id: 1, url: 'card/card-off.png'},
-    cardFront: {id: 3, url: 'card/exemple2.png'}
+    cardFront: {id: 3, url: 'card/exemple2.png'},
+    card_front: undefined,
+    card_back: undefined
   },
   {
     id: 18,
@@ -431,6 +501,8 @@ export const cards: CardInterface[] = [
     version: 1,
     type: 0,
     cardBack: {id: 1, url: 'card/card-off.png'},
-    cardFront: {id: 3, url: 'card/exemple2.png'}
+    cardFront: {id: 3, url: 'card/exemple2.png'},
+    card_front: undefined,
+    card_back: undefined
   },
 ]

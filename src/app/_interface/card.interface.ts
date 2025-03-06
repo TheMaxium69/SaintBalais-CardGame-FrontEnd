@@ -9,7 +9,9 @@ export interface CardInterface {
   type: number;
   version: number;
   cardFront: PictureInterface;
+  card_front: PictureInterface|undefined;
   cardBack: PictureInterface;
+  card_back: PictureInterface|undefined;
   isObtained: boolean;
   nbObtained: number;
 
