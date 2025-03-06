@@ -63,7 +63,7 @@ export class PanelComponent implements OnInit {
       if (response.message == "good"){
         this.app.nbCardOpain = response.result.nbCard;
         this.app.timeForOpainBooster = response.result.time;
-        this.startCountdown(this.app.timeForOpainBooster);
+        this.app.startCountdown(this.app.timeForOpainBooster);
       } else {
         Swal.fire({
           icon: 'error',
@@ -75,22 +75,7 @@ export class PanelComponent implements OnInit {
   }
 
 
-  startCountdown(seconds: number): void {
-    let timeLeft = seconds;
 
-    const interval = setInterval(() => {
-      if (timeLeft <= 0) {
-        clearInterval(interval);
-        this.app.countdown = '00:00';
-        return;
-      }
-
-      const hours = Math.floor(timeLeft / 3600).toString().padStart(2, '0');
-      const minutes = Math.floor((timeLeft % 3600) / 60).toString().padStart(2, '0');
-      this.app.countdown = `${hours}:${minutes}`;
-      timeLeft--;
-    }, 1000);
-  }
 
 
 }

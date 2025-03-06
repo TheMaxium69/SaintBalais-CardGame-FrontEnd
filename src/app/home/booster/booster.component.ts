@@ -47,6 +47,7 @@ export class BoosterComponent {
             if (response.message == "good"){
               this.app.nbCardOpain = response.result.nbCard;
               this.app.timeForOpainBooster = response.result.time;
+              this.app.startCountdown(this.app.timeForOpainBooster);
             } else {
               Swal.fire({
                 icon: 'error',

@@ -287,6 +287,22 @@ export class AppComponent {
     })
   }
 
+  startCountdown(seconds: number): void {
+    let timeLeft = seconds;
+
+    const interval = setInterval(() => {
+      if (timeLeft <= 0) {
+        clearInterval(interval);
+        this.countdown = '00:00';
+        return;
+      }
+
+      const hours = Math.floor(timeLeft / 3600).toString().padStart(2, '0');
+      const minutes = Math.floor((timeLeft % 3600) / 60).toString().padStart(2, '0');
+      this.countdown = `${hours}:${minutes}`;
+      timeLeft--;
+    }, 1000);
+  }
 
 
 
