@@ -1,8 +1,51 @@
-
 <div class="booster-container">
 
   <h1> Ouvrire un booster </h1>
 
-  <img (click)="openBooster()" class="booster" src="card/booster.png">
+  <div class="timer" *ngIf="app.countdown && app.countdown < '12:00'" style="position: absolute;">{{ app.countdownSeconde }}</div>
+  <img (click)="openBooster()" [class.disable]="app.countdown && app.countdown < '12:00'" class="booster"
+       src="card/booster.png">
 
 </div>
+
+<style>
+
+
+  .booster-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative; /* Make it the reference for absolute positioning */
+  }
+
+  .booster {
+    height: 80%;
+    width: auto;
+  }
+  .booster.disable {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  h1 {
+    text-align: center;
+    margin-top: unset;
+    margin-bottom: 20px;
+  }
+
+  .timer {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    top: 50%; /* Center vertically relative to the container */
+    left: 50%;
+    color: black;
+    z-index: 1000;
+  }
+
+
+</style>

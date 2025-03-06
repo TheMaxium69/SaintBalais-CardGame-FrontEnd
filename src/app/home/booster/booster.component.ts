@@ -3,11 +3,14 @@ import {AppComponent} from "../../app.component";
 import {CardService} from "../../_service/card.service";
 import {CardInterface} from "../../_interface/card.interface";
 import Swal from "sweetalert2";
+import {NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-booster',
   standalone: true,
-  imports: [],
+  imports: [
+    NgIf
+  ],
   templateUrl: './booster.component.html',
   styleUrl: './booster.component.css'
 })

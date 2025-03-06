@@ -77,6 +77,7 @@ export class AppComponent {
   nbCardOpain:number = 0;
   timeForOpainBooster:number = 0;
   countdown: string = '12:00';
+  countdownSeconde: string = '12:00:00';
 
   /******************************************************************************************************************
    *
@@ -299,7 +300,9 @@ export class AppComponent {
 
       const hours = Math.floor(timeLeft / 3600).toString().padStart(2, '0');
       const minutes = Math.floor((timeLeft % 3600) / 60).toString().padStart(2, '0');
+      const seconds = (timeLeft % 60).toString().padStart(2, '0');
       this.countdown = `${hours}:${minutes}`;
+      this.countdownSeconde = `${hours}:${minutes}:${seconds}`;
       timeLeft--;
     }, 1000);
   }
